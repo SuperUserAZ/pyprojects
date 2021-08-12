@@ -32,7 +32,7 @@ if __name__ == '__main__':
         elif com1 == 'sort':
             input_list.sort()
         elif com1 == 'reverse':
-            input_list = reversed(input_list)
+            input_list = list(reversed(input_list))
         elif com1 == 'print':
             print(input_list)
         
