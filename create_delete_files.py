@@ -27,8 +27,6 @@ def create_js_file(tmp):
             created_list.append(tmp)
         else:
             exists_list.append(tmp)
-    #print('The following files have been successfully ',
-    #    'created in the current directory:\n {}'.format(created_list))
 
 
 # a function that removes files that enter the loop from zero to 'count'
@@ -42,8 +40,6 @@ def delete_js_file(tmp):
             os.remove(old_js_file)
         else:
             exists_list.append(tmp)
-    #print('The following files have been successfully',
-    #' removed from the current directory:\n {}'.format(remove_list))
             
 
 if __name__ == '__main__':
