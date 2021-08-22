@@ -25,12 +25,14 @@ created_list = list()
 remove_list = list()
 exists_list = list()
 
+# creates folder
 def create_folder(folder_name):
     try:
         os.mkdir(folder_name)
     except FileExistsError as fe:
         print(fe)
 
+# deletes folder
 def delete_folder(folder_name):
     try:
         os.rmdir(folder_name)
@@ -63,21 +65,20 @@ def delete_js_file(tmp):
         else:
             exists_list.append(tmp)
 
+def create(fl_name, fol_name, cr_ls, ex_ls):
+    if fol_name:
+        create_folder(folder_name)
+    create_js_file(fl_name)
+    created_list = json.dumps(cr_ls)
+    exists_list = json.dumps(ex_ls)
+    jsoncreated = json.loads(created_list)
+    jsonexists = json.loads(exists_list)
+    print('The following files have been successfully ',
+    'created in the current directory:\n {}'.format(jsoncreated))
+    print('The following files exist in the current directory: \n{}'.format(jsonexists))
 
-if __name__ == '__main__':
-    if args.create and not args.delete:
-        if folder_name:
-            create_folder(folder_name)
-        create_js_file(file_name)
-        created_list = json.dumps(created_list)
-        exists_list = json.dumps(exists_list)
-        jsoncreated = json.loads(created_list)
-        jsonexists = json.loads(exists_list)
-        print('The following files have been successfully ',
-        'created in the current directory:\n {}'.format(jsoncreated))
-        print('The following files exist in the current directory: \n{}'.format(jsonexists))
-    elif args.delete and not args.create:
-        delete_js_file(file_name)
+def delete(fl_name, cr_ls, ex_ls):
+        delete_js_file(fl_name)
         deleted_list = json.dumps(remove_list)
         NOexists_list = json.dumps(exists_list)
         jsondeleted = json.loads(deleted_list)
@@ -85,5 +86,12 @@ if __name__ == '__main__':
         print('The following files have been successfully',
         'removed from the current directory:\n {}'.format(jsondeleted))
         print('The following files not exist in the current directory: \n{}'.format(jsonNOexists))
+        
+if __name__ == '__main__':
+    if args.create and not args.delete:
+        create(file_name, folder_name, created_list, exists_list)
+    elif args.delete and not args.create:
+        delete(file_name, created_list, exists_list)
     elif del_folder_name:
         delete_folder(del_folder_name)
+        print(del_folder_name)
