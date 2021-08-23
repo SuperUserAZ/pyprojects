@@ -103,4 +103,4 @@ if __name__ == '__main__':
         os.chdir(r'C:\Users\Shadow\Desktop\py_projects')
         if not tmp_ls:
             print(tmp_ls)
-            delete_folder(folder_name
+            delete_folder(folder_name)
