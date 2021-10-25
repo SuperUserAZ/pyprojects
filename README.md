@@ -1,12 +1,8 @@
 # pyprojects
-# create_delete_scr.py
+# key-value.py
 
-this program adds or removes a folder, file or files in the current directory, 
-or from a folder one level higher in the specified number of instances, 
-using commands from the command line
-
--fo     '--folder'  --> 'creates a new folder or navigates to that folder')
--f      '--file'  --> 'the name of the instance of the file or files')
--cr     '--create'  --> 'creates a file')
--d      '--delete'  --> 'deletes the file')
--co     '--count' -->  'indicates the number of instances')
+#key-value.py
+this file is designed to save the data entered via the command line by analogy key-value
+'-k' or '--key' adds a key
+'-v' or '--value' adds the value at the given key
+One key can store multiple values at a time. If you enter only a key, the entire value for this key is displayed. The data will be stored in json format.
