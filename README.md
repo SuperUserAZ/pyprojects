@@ -1,8 +1,4 @@
 # pyprojects
-# core.py
-
-changing the list using commands entered from the terminal after starting the python script
-
 # create_delete_scr.py
 
 this program adds or removes a folder, file or files in the current directory, 
