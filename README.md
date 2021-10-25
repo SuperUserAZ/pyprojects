@@ -1,4 +1,4 @@
-# first_projects
+# pyprojects
 # core.py
 
 changing the list using commands entered from the terminal after starting the python script
